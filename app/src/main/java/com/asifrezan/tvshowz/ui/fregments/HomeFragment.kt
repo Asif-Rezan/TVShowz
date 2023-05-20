@@ -1,17 +1,12 @@
-package com.asifrezan.tvshowz.fregments
+package com.asifrezan.tvshowz.ui.fregments
 
 import android.os.Bundle
-import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.viewpager2.widget.ViewPager2
-import com.asifrezan.tvshowz.R
-import com.asifrezan.tvshowz.adapters.FragmentAdapter
+import com.asifrezan.tvshowz.ui.adapters.FragmentAdapter
 import com.asifrezan.tvshowz.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator

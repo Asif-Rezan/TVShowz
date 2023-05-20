@@ -13,6 +13,10 @@ android {
         viewBinding true
     }
 
+    dataBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.asifrezan.tvshowz"
         minSdk 24
@@ -74,7 +78,11 @@ dependencies {
     //swap screen
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
 
+    //loading view
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
 
 

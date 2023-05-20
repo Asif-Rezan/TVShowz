@@ -1,4 +1,4 @@
-package com.asifrezan.tvshowz.adapters
+package com.asifrezan.tvshowz.ui.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

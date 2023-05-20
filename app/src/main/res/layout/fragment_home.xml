@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/custom_black"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
@@ -15,6 +16,7 @@
         <TextView
             android:layout_marginTop="@dimen/_40sdp"
             android:layout_width="wrap_content"
+            android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
             android:textStyle="bold"
             android:layout_height="wrap_content"
@@ -24,6 +26,7 @@
 
             android:layout_width="wrap_content"
             android:textSize="@dimen/_15ssp"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:layout_height="wrap_content"
             android:text="and more ..."
@@ -36,6 +39,9 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
+        app:tabIndicatorColor="@color/orange"
+        app:tabBackground="@color/black"
+        app:tabTextColor="@color/orange"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="4dp"

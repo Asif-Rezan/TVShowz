@@ -8,19 +8,19 @@
 
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.asifrezan.tvshowz.fregments.HomeFragment"
+        android:name="com.asifrezan.tvshowz.ui.fregments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/PlayFregment"
-        android:name="com.asifrezan.tvshowz.fregments.PlayFragment"
+        android:name="com.asifrezan.tvshowz.ui.fregments.PlayFragment"
         android:label="Cart"
         tools:layout="@layout/fregment_play" />
 
 
     <fragment
         android:id="@+id/ProfileFragment"
-        android:name="com.asifrezan.tvshowz.fregments.ProfileFragment"
+        android:name="com.asifrezan.tvshowz.ui.fregments.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 
