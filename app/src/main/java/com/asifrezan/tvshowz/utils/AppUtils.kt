@@ -1,5 +1,4 @@
 package com.asifrezan.tvshowz.utils
 
-class AppUtils {
 
-}
+const val IMAGE_STORAGE_URL = "https://image.tmdb.org/t/p/w500/"

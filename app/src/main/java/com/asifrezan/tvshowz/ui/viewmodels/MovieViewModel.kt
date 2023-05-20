@@ -18,6 +18,9 @@ class MovieViewModel(private val moviesRepository: MoviesRepository) : ViewModel
     private val _movieDetails = MutableLiveData<Details>()
     val movieDetails: LiveData<Details> = _movieDetails
 
+    private val _similarMovies = MutableLiveData<Movies>()
+    val similar_movies = _similarMovies
+
     fun getMovies(page:Int) {
         viewModelScope.launch {
             Log.e("eee","viewmodel")
@@ -37,6 +40,19 @@ class MovieViewModel(private val moviesRepository: MoviesRepository) : ViewModel
             try {
                 val movieDetails = moviesRepository.getDetails(movieId)
                 _movieDetails.value = movieDetails!!
+            } catch (e: Exception) {
+                Log.e("eee",e.message.toString())
+
+            }
+        }
+    }
+
+    fun getSimilarMovies(movieId: Int) {
+        viewModelScope.launch {
+            Log.e("eee","viewmodel")
+            try {
+                val movies = moviesRepository.getSimilarMovie(movieId)
+                _similarMovies.value = movies!!
             } catch (e: Exception) {
                 Log.e("eee",e.message.toString())
 

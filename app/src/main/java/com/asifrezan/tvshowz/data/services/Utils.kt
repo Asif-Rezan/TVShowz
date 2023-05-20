@@ -9,3 +9,4 @@ const val VERSION_3_URL = 3
 const val CATEGORY_MOVIE = "movie"
 const val LANGUAGE_ENGLISH = "en-US"
 const val TYPE_POPULAR = "popular"
+const val SIMILAR = "similar"

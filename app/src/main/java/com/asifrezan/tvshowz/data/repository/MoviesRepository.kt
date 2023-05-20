@@ -20,4 +20,12 @@ class MoviesRepository(private val movieServices: MovieServices) {
         }
         return null
     }
+
+    suspend fun getSimilarMovie(movieId: Int): Movies? {
+        val response = movieServices.getSimilarMovies(movieId)
+        if (response.isSuccessful) {
+            return response.body()
+        }
+        return null
+    }
 }

@@ -26,4 +26,14 @@ interface MovieServices {
     ): Response<Details>
 
 
+    @GET("$API_URL/$VERSION_3_URL/$CATEGORY_MOVIE/{movie_id}/$SIMILAR")
+    @Headers("Authorization: Bearer $TOKEN")
+    suspend fun getSimilarMovies(
+        @Path("movie_id") movie_id: Int,
+    ): Response<Movies>
+
+
+
+
+
 }

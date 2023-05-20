@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.asifrezan.tvshowz.R
 import com.asifrezan.tvshowz.ui.activities.DetailsActivity
 import com.asifrezan.tvshowz.data.models.movies.MovieList
+import com.asifrezan.tvshowz.utils.IMAGE_STORAGE_URL
 import com.bumptech.glide.Glide
 
 class MoviesListAdapter(
@@ -45,7 +46,7 @@ class MoviesListAdapter(
         val movieData = movieList[position]
         viewHolder.movieTitle.text = movieData.title
 
-        val posterUrl = "https://image.tmdb.org/t/p/w500/${movieData.poster_path}"
+        val posterUrl = "$IMAGE_STORAGE_URL/${movieData.poster_path}"
 
 
 
