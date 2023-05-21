@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
             MoviesFragment(),
             TvSeriesFragment(),
             TopRatedMovieFragment(),
-            SportsFragment(),
+            TopRatedTvSeriesFragment(),
         )
 
         viewPager.adapter = FragmentAdapter(requireActivity(), fragmentList)
@@ -53,7 +53,7 @@ class HomeFragment : Fragment() {
                 0 -> tab.text = "Movies"
                 1 -> tab.text = "Tv Series"
                 2 -> tab.text = "Top Movies"
-                3 -> tab.text = "Sport"
+                3 -> tab.text = "Top Series"
             }
 
         }.attach()

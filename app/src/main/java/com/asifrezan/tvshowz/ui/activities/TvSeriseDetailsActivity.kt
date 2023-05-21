@@ -39,6 +39,7 @@ class TvSeriseDetailsActivity : AppCompatActivity() {
         binding = ActivityTvSeriseDetailsBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        supportActionBar?.hide()
 
         // setContentView(R.layout.activity_details)
 
