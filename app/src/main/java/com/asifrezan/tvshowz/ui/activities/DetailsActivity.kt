@@ -2,6 +2,7 @@ package com.asifrezan.tvshowz.ui.activities
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -89,6 +90,14 @@ class DetailsActivity : AppCompatActivity() {
 
 
         movieViewModel.similar_movies.observe(this, Observer {
+
+            if(it.results.isEmpty())
+            {
+                binding.similarItemCheck.setText("No Similar Item Available")
+                binding.similarItemCheck.visibility = View.VISIBLE
+            }
+
+
 
             Log.e("xxxxx", it.results.toString())
             movieList.addAll(it.results)

@@ -155,46 +155,57 @@
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/overview">
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@+id/overview">
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent">
 
-        <FrameLayout
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/linearLayout_gridtableLayout"
+                    android:layout_width="900dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-            <LinearLayout
-                android:id="@+id/linearLayout_gridtableLayout"
-                android:layout_width="900dp"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                    <GridView
+                        android:id="@+id/gridView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="4dp"
+                        android:columnWidth="100dp"
+                        android:gravity="center"
+                        android:horizontalSpacing="@dimen/_12sdp"
+                        android:scrollbarAlwaysDrawHorizontalTrack="true"
+                        android:scrollbarAlwaysDrawVerticalTrack="true"
+                        android:scrollbars="horizontal"
+                        android:stretchMode="none"
+                        android:verticalSpacing="1dp">
 
-                <GridView
-                    android:id="@+id/gridView"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_margin="4dp"
-                    android:columnWidth="100dp"
-                    android:gravity="center"
-                    android:horizontalSpacing="@dimen/_12sdp"
-                    android:scrollbarAlwaysDrawHorizontalTrack="true"
-                    android:scrollbarAlwaysDrawVerticalTrack="true"
-                    android:scrollbars="horizontal"
-                    android:stretchMode="none"
-                    android:verticalSpacing="1dp">
-
-                </GridView>
-
-
-            </LinearLayout>
-        </FrameLayout>
-    </HorizontalScrollView>
+                    </GridView>
 
 
+                </LinearLayout>
+            </FrameLayout>
+        </HorizontalScrollView>
 
+
+        <TextView
+            android:id="@+id/similar_item_check"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/overview" />
 
 
 

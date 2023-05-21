@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
         val fragmentList = listOf(
             MoviesFragment(),
             TvSeriesFragment(),
-            DocumentaryFragment(),
+            TopRatedMovieFragment(),
             SportsFragment(),
         )
 
@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
             when (position) {
                 0 -> tab.text = "Movies"
                 1 -> tab.text = "Tv Series"
-                2 -> tab.text = "Documentary"
+                2 -> tab.text = "Top Movies"
                 3 -> tab.text = "Sport"
             }
 

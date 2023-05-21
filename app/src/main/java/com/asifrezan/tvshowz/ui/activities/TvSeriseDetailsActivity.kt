@@ -3,6 +3,7 @@ package com.asifrezan.tvshowz.ui.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.GridView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -95,6 +96,12 @@ class TvSeriseDetailsActivity : AppCompatActivity() {
 
 
         tvSeriesViewModel.similarTvSeries.observe(this, Observer {
+
+            if(it.results.isEmpty())
+            {
+                binding.similarItemCheck.setText("No Similar Item Available")
+                binding.similarItemCheck.visibility = View.VISIBLE
+            }
 
             Log.e("xxxxx", it.results.toString())
             tvSeriesList.addAll(it.results)

@@ -194,6 +194,20 @@
         </HorizontalScrollView>
 
 
+        <TextView
+            android:id="@+id/similar_item_check"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/overview" />
+
+
 
 
 
