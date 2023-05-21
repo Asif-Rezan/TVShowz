@@ -13,6 +13,8 @@ import com.asifrezan.tvshowz.R
 import com.asifrezan.tvshowz.ui.activities.DetailsActivity
 import com.asifrezan.tvshowz.data.models.movies.MovieList
 import com.asifrezan.tvshowz.data.models.tv_series.TvSeriesList
+import com.asifrezan.tvshowz.data.models.tv_series.TvSeriseDetails
+import com.asifrezan.tvshowz.ui.activities.TvSeriseDetailsActivity
 import com.asifrezan.tvshowz.utils.IMAGE_STORAGE_URL
 import com.bumptech.glide.Glide
 
@@ -67,8 +69,8 @@ class TvSeriseListAdapter(
             val clickedMovieId = movieData.id
 
 
-            val intent = Intent(context, DetailsActivity::class.java)
-            intent.putExtra("movieId", clickedMovieId.toString())
+            val intent = Intent(context, TvSeriseDetailsActivity::class.java)
+            intent.putExtra("serise_id", clickedMovieId.toString())
             context.startActivity(intent)
         }
 
