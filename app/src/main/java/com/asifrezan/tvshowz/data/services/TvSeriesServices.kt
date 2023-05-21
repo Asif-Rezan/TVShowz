@@ -1,5 +1,6 @@
 package com.asifrezan.tvshowz.data.services
 import com.asifrezan.tvshowz.data.models.movies.Details
+import com.asifrezan.tvshowz.data.models.movies.Movies
 import com.asifrezan.tvshowz.data.models.tv_series.TvSeries
 import com.asifrezan.tvshowz.data.models.tv_series.TvSeriseDetails
 import retrofit2.Response
@@ -22,6 +23,14 @@ interface TvSeriesServices {
     suspend fun getTvSeriesDetails(
         @Path("series_id") series_id: Int,
     ): Response<TvSeriseDetails>
+
+
+
+    @GET("$API_URL/$VERSION_3_URL/$CATEGORY_TV/{series_id}/$SIMILAR")
+    @Headers("Authorization: Bearer $TOKEN")
+    suspend fun getSimilarTvSeries(
+        @Path("series_id") series_id: Int,
+    ): Response<TvSeries>
 
 
 }

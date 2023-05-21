@@ -17,6 +17,9 @@ class TvSeriesViewModel(private val tvSeriesRepository: TvSeriesRepository) : Vi
     private val _tvSeriesDetails = MutableLiveData<TvSeriseDetails>()
     val tvSeriesDetails: LiveData<TvSeriseDetails> = _tvSeriesDetails
 
+    private val _similarTvSeries = MutableLiveData<TvSeries>()
+    val similarTvSeries: LiveData<TvSeries> = _similarTvSeries
+
 
     fun getTvSeries(page:Int) {
         viewModelScope.launch {
@@ -37,6 +40,19 @@ class TvSeriesViewModel(private val tvSeriesRepository: TvSeriesRepository) : Vi
             try {
                 val tvSeriseDetails = tvSeriesRepository.getTvSeriesDetails(serise_id)
                 _tvSeriesDetails.value = tvSeriseDetails!!
+            } catch (e: Exception) {
+                Log.e("eee",e.message.toString())
+
+            }
+        }
+    }
+
+    fun getSimilarTvSeries(serise_id: Int) {
+        viewModelScope.launch {
+            Log.e("eee","viewmodel")
+            try {
+                val similar_tv_series = tvSeriesRepository.getSimilarTvSeries(serise_id)
+                _similarTvSeries.value = similar_tv_series!!
             } catch (e: Exception) {
                 Log.e("eee",e.message.toString())
 

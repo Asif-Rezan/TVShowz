@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.asifrezan.tvshowz.R
 import com.asifrezan.tvshowz.data.models.movies.MovieList
+import com.asifrezan.tvshowz.data.models.tv_series.TvSeriesList
 import com.asifrezan.tvshowz.data.repository.MoviesRepository
 import com.asifrezan.tvshowz.data.repository.TvSeriesRepository
 import com.asifrezan.tvshowz.data.services.MovieServices
@@ -16,6 +17,7 @@ import com.asifrezan.tvshowz.data.services.TvSeriesServices
 import com.asifrezan.tvshowz.databinding.ActivityDetailsBinding
 import com.asifrezan.tvshowz.databinding.ActivityTvSeriseDetailsBinding
 import com.asifrezan.tvshowz.ui.adapters.MoviesListAdapter
+import com.asifrezan.tvshowz.ui.adapters.TvSeriseListAdapter
 import com.asifrezan.tvshowz.ui.viewmodels.MovieViewModel
 import com.asifrezan.tvshowz.ui.viewmodels.TvSeriesViewModel
 import com.asifrezan.tvshowz.ui.viewmodels.factory.MovieViewModelFactory
@@ -26,8 +28,8 @@ import com.bumptech.glide.Glide
 class TvSeriseDetailsActivity : AppCompatActivity() {
     private lateinit var tvSeriesViewModel: TvSeriesViewModel
     private lateinit var binding: ActivityTvSeriseDetailsBinding
-    private lateinit var moviesGridView: GridView
-    val movieList = mutableListOf<MovieList>()
+    private lateinit var tvSeriesGridView: GridView
+    val tvSeriesList = mutableListOf<TvSeriesList>()
 
 
 
@@ -40,7 +42,7 @@ class TvSeriseDetailsActivity : AppCompatActivity() {
         // setContentView(R.layout.activity_details)
 
 
-        val clickedMovieId = intent.getStringExtra("serise_id")
+        val clickedTvSeriseId = intent.getStringExtra("serise_id")
 
         //  Log.e("ddddddddddddddddd",clickedMovieId.toInt())
 
@@ -50,15 +52,15 @@ class TvSeriseDetailsActivity : AppCompatActivity() {
         tvSeriesViewModel = ViewModelProvider(this, viewModelFactory).get(TvSeriesViewModel::class.java)
 
         //API call
-        if (clickedMovieId != null) {
-            tvSeriesViewModel.getTvSeriesDetails(clickedMovieId.toInt())
-            //tvSeriesViewModel.getSimilarMovies(clickedMovieId.toInt())
+        if (clickedTvSeriseId != null) {
+            tvSeriesViewModel.getTvSeriesDetails(clickedTvSeriseId.toInt())
+            tvSeriesViewModel.getSimilarTvSeries(clickedTvSeriseId.toInt())
         }
 
 
 
 
-        //Display the movie details
+        //Display the series details
         tvSeriesViewModel.tvSeriesDetails.observe(this, Observer { tvSeries ->
             // Handle the movie data here
             Log.e("rrr", tvSeries.toString())
@@ -85,25 +87,25 @@ class TvSeriseDetailsActivity : AppCompatActivity() {
 
 
 
-        //Display similar movies
+        //Display similar tv series
 
-//        moviesGridView = binding.gridView
-//
-//        val movieAdapter = MoviesListAdapter(movieList=movieList, context = this)
-//
-//
-//        movieViewModel.similar_movies.observe(this, Observer {
-//
-//            Log.e("xxxxx", it.results.toString())
-//            movieList.addAll(it.results)
-//            movieAdapter.notifyDataSetChanged()
-//
-//            moviesGridView.numColumns = movieList.size
-//
-//        })
-//
-//        moviesGridView.adapter = movieAdapter
-//        moviesGridView.isHorizontalScrollBarEnabled = true
+        tvSeriesGridView = binding.gridView
+
+        val movieAdapter = TvSeriseListAdapter(this, tvSeriesList)
+
+
+        tvSeriesViewModel.similarTvSeries.observe(this, Observer {
+
+            Log.e("xxxxx", it.results.toString())
+            tvSeriesList.addAll(it.results)
+            movieAdapter.notifyDataSetChanged()
+
+            tvSeriesGridView.numColumns = tvSeriesList.size
+
+        })
+
+        tvSeriesGridView.adapter = movieAdapter
+        tvSeriesGridView.isHorizontalScrollBarEnabled = true
 
 
 
