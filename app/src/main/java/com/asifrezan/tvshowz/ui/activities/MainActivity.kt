@@ -7,6 +7,8 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.asifrezan.tvshowz.R
+import com.asifrezan.tvshowz.utils.isOnline
+import com.asifrezan.tvshowz.utils.showAlertDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +17,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
+
+        if(!isOnline(this))
+        {
+            showAlertDialog(this)
+
+        }
 
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationBarId)

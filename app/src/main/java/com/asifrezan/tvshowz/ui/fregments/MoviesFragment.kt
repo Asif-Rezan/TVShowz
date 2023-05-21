@@ -55,7 +55,7 @@ class MoviesFragment : Fragment() {
         })
 
         // Call the getMovies() function to fetch the data
-        movieViewModel.getMovies(2)
+        movieViewModel.getMovies(1)
 
         moviesGridView.adapter = movieAdapter
 
